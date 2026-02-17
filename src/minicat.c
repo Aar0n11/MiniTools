@@ -23,7 +23,6 @@ int main(int argc, char *argv[]) {
 
     char *line = NULL;
     size_t len = 0;
-    int line_count = 1;
 
     while (getline(&line, &len, stream) != -1) {
         printf("%s", line);
