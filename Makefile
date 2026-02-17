@@ -2,14 +2,14 @@
 build_dir:
 	mkdir build
 
-minils: minils.c
-	gcc -o build/minils minils.c
+minils: src/minils.c
+	gcc -o build/minils src/minils.c
 
-minicat: minicat.c
-	gcc -o build/minicat minicat.c
+minicat: src/minicat.c
+	gcc -o build/minicat src/minicat.c
 
-miniecho: miniecho.c
-	gcc -o build/miniecho miniecho.c
+miniecho: src/miniecho.c
+	gcc -o build/miniecho src/miniecho.c
 
 .PHONY: all
 all:
