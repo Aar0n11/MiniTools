@@ -1,20 +1,20 @@
-.PHONY: build_dir
-build_dir:
-	mkdir build
+CC      := gcc
+CFLAGS  := -Wall -Wextra -Werror
+BUILD   := build
+SRC     := src
+TARGETS := minils minicat miniecho
 
-minils: src/minils.c
-	gcc -o build/minils src/minils.c
+all: $(BUILD) $(TARGETS)
 
-minicat: src/minicat.c
-	gcc -o build/minicat src/minicat.c
+$(BUILD):
+	mkdir -p $(BUILD)
 
-miniecho: src/miniecho.c
-	gcc -o build/miniecho src/miniecho.c
+$(TARGETS): %: $(SRC)/%.c | $(BUILD)
+	$(CC) $(CFLAGS) -o $(BUILD)/$@ $<
+
+.PHONY: clean
+clean:
+	rm -rf $(BUILD)
 
 .PHONY: all
-all:
-	make build_dir
-	make minils
-	make minicat
-	make miniecho
 
