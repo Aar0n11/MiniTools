@@ -2,7 +2,7 @@ CC      := gcc
 CFLAGS  := -Wall -Wextra -Werror
 BUILD   := build
 SRC     := src
-TARGETS := minils minicat miniecho minimkdir minitouch minirmdir minirm
+TARGETS := minils minicat miniecho minimkdir minitouch minirmdir minirm minipwd
 
 all: $(BUILD) $(TARGETS)
 
